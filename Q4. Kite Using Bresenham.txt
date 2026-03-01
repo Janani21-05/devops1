@@ -1,0 +1,39 @@
+Q4. Kite Using Bresenham
+
+#include <GL/glut.h>
+
+void lineB(int x1,int y1,int x2,int y2){
+    int dx=x2-x1, dy=y2-y1;
+    int p = 2*dy - dx;
+    int x=x1, y=y1;
+
+    while(x<=x2){
+        glBegin(GL_POINTS);
+        glVertex2i(x,y);
+        glEnd();
+
+        x++;
+        if(p>=0){ y++; p+=2*(dy-dx); }
+        else p+=2*dy;
+    }
+}
+
+void display(){
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    lineB(100,100,150,200);
+    lineB(150,200,200,100);
+    lineB(200,100,150,50);
+    lineB(150,50,100,100);
+
+    glFlush();
+}
+
+void init(){ gluOrtho2D(0,500,0,500); }
+
+int main(int a,char** b){
+    glutInit(&a,b); glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB);
+    glutCreateWindow("Kite");
+    glutInitWindowSize(500,500);
+    init(); glutDisplayFunc(display); glutMainLoop();
+}
