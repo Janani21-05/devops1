@@ -1,0 +1,15 @@
+<html> 
+<head> 
+<title>INTERNAL STYLE SHEET</title> 
+</head> 
+<body bgcolor="pink"> 
+<p style=font-size:40pt;text-align:center> deitel&deitel is text book for web technology theory</p> 
+<h1 >some important tags are</h1> 
+<ul style=font-family:chiller;font-size:30pt> 
+<li>forms</li> 
+<li>frames</li> 
+<li>divisions</li> </ul> 
+this is the text where style is not used 
+</body> 
+</html> 
+
